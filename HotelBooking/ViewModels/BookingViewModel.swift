@@ -34,7 +34,7 @@ final class BookingViewModel: ObservableObject{
     }
     
     var numberPrompt: String?{
-        isValidProperty(property: phoneNumber, valid: isValidNumber, prompt: "Введите верную почту")
+        isValidProperty(property: phoneNumber, valid: isValidNumber, prompt: "Введите номер телефона")
     }
     
     init(networkManager: NetworkManger) {
