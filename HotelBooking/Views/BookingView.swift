@@ -11,7 +11,7 @@ struct BookingView: View {
     @EnvironmentObject var nav: NavigationStateManager
     @StateObject private var viewModel = BookingViewModel(networkManager: NetworkService())
     
-    @State private var numberOfSections = 1
+    @State private var numberOfSections = ConstBooking.defaultSection
     @State private var username: String = ""
     @State private var name: String = ""
     @State private var surName: String = ""
@@ -24,24 +24,21 @@ struct BookingView: View {
     var body: some View {
         GeometryReader { proxy in
             ScrollView(.vertical){
-                VStack(spacing: 0){
+                VStack(spacing: 8){
                     let info = viewModel.bookingInfo
                     HotelFrame(ratingName: info.ratingName, hotelName: info.hotelName, hotelAdress: info.hotelAdress, horating: info.horating)
                         .background(.white)
                         .cornerRadius(12)
-                        .padding(.bottom, 8)
                     BookingFrame(departure: info.departure, arrivalCountry: info.arrivalCountry, tourDateStart: info.tourDateStart, tourDateStop: info.tourDateStop, numberOfNights: info.numberOfNights, hotelName: info.hotelName, room: info.room, nutrition: info.nutrition)
                         .background(.white)
                         .cornerRadius(12)
-                        .padding(.bottom, 8)
                     InfoFrame(viewModel: viewModel)
                         .background(.white)
                         .cornerRadius(12)
-                        .padding(.bottom, 8)
                     ForEach(0..<numberOfSections, id: \.self){ index in
-                        VStack{
+                        VStack(spacing: 0){
                             Collapsible {
-                                Text("\(index + 1) турист")
+                                Text(convertIndexTourist(number: index) + ConstBooking.toutist)
                             } content: {
                                 HBTextFieldStack(sectionViewModel: viewModel.sectionArray[index])
                                     .padding(.horizontal, 16)
@@ -52,14 +49,11 @@ struct BookingView: View {
                         }
                         .background(Color.white)
                         .cornerRadius(12)
-                        .padding(.bottom, 8)
                     }
                     HBAddTouristButton(sumSections: $numberOfSections, viewModel: viewModel)
-                        .padding(.bottom, 8)
                     CostFrame(tourPrice: info.tourPrice, fuelCharge: info.fuelCharge, serviceCharge: info.serviceCharge)
                         .background(.white)
                         .cornerRadius(12)
-                        .padding(.bottom, 8)
                     ZStack(alignment: .top){
                         Button {
                             let turistInfo = viewModel.indexArray.allSatisfy({viewModel.sectionArray[$0].canSubmitCollapse == true })
@@ -68,35 +62,26 @@ struct BookingView: View {
                             } else{
                                 showingAlert = true
                             }
-                            
                         } label: {
-                            HBButton(title: "Оплатить " + String(info.fuelCharge + info.serviceCharge + info.tourPrice) + " ₽", width:  abs(proxy.size.width - 32), height: 48)
+                            HBButton(title: ConstBooking.pay + formated(valueInt: info.fuelCharge + info.serviceCharge + info.tourPrice)  + ConstMain.space + ConstMain.rub, width:  abs(proxy.size.width - 32), height: 48)
+                                .padding(.top, 12)
                         }
                         .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Ошибка"), message: Text("Все поля обязательны. Пожалуйста, заполните пустые поля."), dismissButton: .default(Text("Хорошо")))
+                            Alert(title: Text(ConstBooking.alerTitle), message: Text(ConstBooking.alertMessage), dismissButton: .default(Text(ConstBooking.alertButTitle)))
                         }
                     }
-                    .frame(width: abs(proxy.size.width), height: abs(proxy.size.height * 0.12), alignment: .top)
+                    .frame(width: abs(proxy.size.width), height: 88, alignment: .top)
                     .background(.white)
                 }
             }
+            .onTapGesture {
+                self.hideKeyboard()
+            }
             .padding(.top, 8)
             .ignoresSafeArea(.all, edges: .bottom)
-            .background(Color.gray
-                .opacity(0.1))
+            .background(ConstMain.backColor)
             .navigationBarTitleDisplayMode(.inline)
-            .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(.white, for: .navigationBar)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text(viewModel.bookingInfo.hotelName)
-                            .font(Font.custom("SFProDisplay-Regular", size: 18))
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-                }
-            }
-            
+            .navBarCustomMod(with: ConstBooking.navTitle)
         }
         .environmentObject(viewModel)
     }

@@ -13,7 +13,7 @@ enum HBErrors: Error, LocalizedError{
     case invalidData
     case unknow(Error)
     
-    var errorDescription: String?{ //эта переменная от LocalizedError
+    var errorDescription: String?{ 
         switch self{
         case .invalidURL:
             return "Wrong URL"

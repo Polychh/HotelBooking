@@ -24,7 +24,7 @@ struct HBFhotoSlider: View {
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 257)
+        .frame(height: 257)
         .onAppear {
             setupAppearance()
         }

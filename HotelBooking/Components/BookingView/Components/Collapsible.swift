@@ -16,19 +16,18 @@ struct Collapsible<Content: View>: View {
             HStack{
                 self.label()
                     .foregroundColor(.black)
-                    .font(Font.custom("SFProDisplay-Regular", size: 22)
-                        .weight(.bold))
+                    .font(Font.custom(ConstMain.fontDisplayReg, size: 22)
+                        .weight(.medium))
                 Spacer()
                 Button(
                     action: { self.collapsed.toggle() },
                     label: {
-                        
-                        Image(systemName: self.collapsed ? "chevron.down" : "chevron.up")
+                        Image(systemName: self.collapsed ? ConstBooking.chevronDownImage : ConstBooking.chevronUpImage)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 10, height: 16)
                             .frame(width: 32, height: 32)
-                            .background(Color(red: 0.05, green: 0.45, blue: 1).opacity(0.1))
+                            .background(ConstMain.blueColor.opacity(0.1))
                             .cornerRadius(6)
                     }
                 )
@@ -36,8 +35,8 @@ struct Collapsible<Content: View>: View {
             }
             .background(Color.white.opacity(0.01))
             .padding(.horizontal, 16)
-            .padding(.top, 16)
-            .padding(.bottom, 8)
+            .padding(.top, 13)
+            .padding(.bottom, 5)
             VStack {
                 self.content()
                     .frame(maxWidth: .infinity)
@@ -45,7 +44,6 @@ struct Collapsible<Content: View>: View {
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: collapsed ? 0 : .none)
             .clipped()
-            .animation(.easeOut)
             .transition(.slide)
         }
     }

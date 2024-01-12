@@ -14,13 +14,13 @@ struct CostFrameStack: View {
     var body: some View {
         HStack{
             Text(text1)
-                .foregroundColor(Color(red: 0.51, green: 0.53, blue: 0.59))
+                .foregroundColor(ConstMain.grayFontColor)
             Spacer()
             Text(text2)
                 .foregroundColor(.black)
         }
         .font(
-            Font.custom("SFProDisplay-Regular", size: 16))
+            Font.custom(ConstMain.fontDisplayReg, size: 16))
     }}
 
 

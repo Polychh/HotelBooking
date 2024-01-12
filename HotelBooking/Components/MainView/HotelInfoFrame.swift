@@ -12,24 +12,21 @@ struct HotelInfoFrame: View {
     var textInfo: [String]
     
     var body: some View {
-        VStack(spacing: 0){
-            Text("Об отеле")
+        VStack(alignment: .leading ,spacing: 8){
+            Text(ConstMain.infoHotel)
                 .font(
-                    Font.custom("SFProDisplay-Regular", size: 22)
+                    Font.custom(ConstMain.fontDisplayReg, size: 22)
                         .weight(.medium)
                 )
                 .foregroundColor(.black)
-                .frame(width: 343, alignment: .topLeading)
-                .padding(.vertical, 16)
+                .padding(.bottom, 8)
             HBHstack(text: textInfo[0], text1:  textInfo[1])
-                .padding(.bottom, 8)
             HBHstack(text:  textInfo[2], text1:  textInfo[3])
-                .padding(.bottom, 8)
+                .padding(.bottom, 4)
             Text(descript)
-                .font(Font.custom("SFProDisplay-Regular", size: 16))
+                .font(Font.custom(ConstMain.fontDisplayReg, size: 16))
                 .foregroundColor(.black.opacity(0.9))
-                .frame(width: 343, alignment: .topLeading)
-                .padding(.bottom, 16)
+                .padding(.bottom, 8)
             List{
                 ForEach(modelList){item in
                     MainViewListItem(image: item.imageName, text: item.text, text1: item.text1)
@@ -37,10 +34,9 @@ struct HotelInfoFrame: View {
             }
             .listStyle(.plain)
             .cornerRadius(15)
-            .frame(maxHeight: 178)
-            .padding(.bottom, 16)
+            .frame(height: 178)
         }
-        .padding(.horizontal,16)
+        .padding(16)
     }
 }
 

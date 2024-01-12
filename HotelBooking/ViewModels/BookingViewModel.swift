@@ -30,11 +30,11 @@ final class BookingViewModel: ObservableObject{
     var anyCancellable: [AnyCancellable?] = []
     
     var emailPrompt: String?{
-        isValidProperty(property: email, valid: isValidEmail, prompt: "Введите верную почту")
+        isValidProperty(property: email, valid: isValidEmail, prompt: ConstBooking.promptEmail)
     }
     
     var numberPrompt: String?{
-        isValidProperty(property: phoneNumber, valid: isValidNumber, prompt: "Введите номер телефона")
+        isValidProperty(property: phoneNumber, valid: isValidNumber, prompt: ConstBooking.promptNumber)
     }
     
     init(networkManager: NetworkManger) {
@@ -62,7 +62,7 @@ final class BookingViewModel: ObservableObject{
     }
     
     private func isValidProperty(property: String, valid: Bool, prompt: String) -> String?{
-        if property.isEmpty || valid == true{
+        if property.isEmpty || valid == true || property == ConstBooking.beginNumberFhone{
             return nil
         } else{
             return prompt
@@ -81,7 +81,7 @@ final class BookingViewModel: ObservableObject{
         $phoneNumber
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map {number in
-                return self.numberPredicate.evaluate(with: number)
+                return  self.numberPredicate.evaluate(with: number)
             }
             .assign(to: \.isValidNumber, on: self)
             .store(in: &cancalableInfo)

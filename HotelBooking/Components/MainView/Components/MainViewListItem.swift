@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MainViewListItem: View {
-    var image: String = "close"
-    var text: String = "Удобства"
-    var text1: String = "Самое необходимое"
+    var image: String
+    var text: String
+    var text1: String
     
     var body: some View {
         HStack(spacing: 12) {
@@ -18,29 +18,24 @@ struct MainViewListItem: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: 24, height: 24)
-            
             VStack(alignment: .leading, spacing: 2){
                 Text(text)
                     .font(
-                        Font.custom("SFProDisplay-Regular", size: 16)
+                        Font.custom(ConstMain.fontDisplayReg, size: 16)
                             .weight(.medium)
                     )
-                    .foregroundColor(Color(red: 0.17, green: 0.19, blue: 0.21))
+                    .foregroundColor(ConstMain.listItemFontColor)
                 Text(text1)
                     .font(
-                        Font.custom("SFProDisplay-Regular", size: 14)
+                        Font.custom(ConstMain.fontDisplayReg, size: 14)
                             .weight(.medium)
                     )
-                    .foregroundColor(Color(red: 0.51, green: 0.53, blue: 0.59))
+                    .foregroundColor(ConstMain.grayFontColor)
             }
             Spacer()
-            Image("icon")
+            Image(ConstMain.icon)
         }
-        .listRowBackground(Color.gray
-            .opacity(0.1))
+        .listRowBackground(ConstMain.lightGrayColor)
     }
 }
 
-#Preview {
-    MainViewListItem()
-}

@@ -48,3 +48,13 @@ private func makeCombinedChunks<Output, Failure: Swift.Error>(
             .eraseToAnyPublisher()
     }
 }
+
+extension Collection {
+    func every(n: Int) -> UnfoldSequence<Element,Index> {
+          sequence(state: startIndex) { index in
+              guard index < endIndex else { return nil }
+              defer { let _ = formIndex(&index, offsetBy: n, limitedBy: endIndex) }
+              return self[index]
+          }
+      }
+}

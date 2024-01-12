@@ -4,8 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Roboto-Regular.ttf</string>
-		<string>Roboto-Bold.ttf</string>
 		<string>SF-Pro-Display-Regular.otf</string>
 		<string>SF-Pro-Display-Semibold.otf</string>
 	</array>

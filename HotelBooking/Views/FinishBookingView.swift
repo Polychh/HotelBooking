@@ -13,56 +13,45 @@ struct FinishBookingView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 20){
             Spacer()
-            Image("party")
+            Image(ConstFinBooking.image)
                 .resizable()
                 .scaledToFill()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 44, height: 44)
                 .padding(25)
-                .background(Color(red: 0.96, green: 0.96, blue: 0.98))
+                .background(ConstMain.backColor )
                 .cornerRadius(1000)
-            Text("Ваш заказ принят в работу")
+                .padding(12)
+            Text(ConstFinBooking.title)
                 .font(
-                    Font.custom("SFProDisplay-Regular", size: 22)
+                    Font.custom(ConstMain.fontDisplayReg, size: 22)
                         .weight(.medium)
                 )
                 .multilineTextAlignment(.center)
                 .foregroundColor(.black)
                 .padding(.horizontal, 16)
-                .frame(width: 343, alignment: .top)
-            Text("Подтверждение заказа №104893 может занять некоторое время (от 1 часа до суток). Как только мы получим ответ от туроператора, вам на почту придет уведомление.")
-                .font(Font.custom("SFProDisplay-Regular", size: 16))
+            Text(ConstFinBooking.info)
+                .font(Font.custom(ConstMain.fontDisplayReg, size: 16))
+                .lineLimit(5)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(red: 0.51, green: 0.53, blue: 0.59))
+                .foregroundColor(ConstFinBooking.colorFont)
                 .padding(.horizontal, 23)
-                .frame(width: 329, alignment: .top)
-            
             Spacer()
             ZStack(alignment: .top){
                 Button {
                     nav.popToRoot()
                 } label: {
-                    HBButton(title: "Супер", width:  UIScreen.main.bounds.width - 32, height: 48)
+                    HBButton(title: ConstFinBooking.buttonTitle, width:  UIScreen.main.bounds.width - 32, height: 48)
+                        .padding(.top, 12)
                 }
             }
             .frame(width: UIScreen.main.bounds.width, height: 88, alignment: .top)
             .background(.white)
         }
+        .background(.white)
         .ignoresSafeArea(.all, edges: .bottom)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbarBackground(.visible, for: .navigationBar)
-        .toolbarBackground(.white, for: .navigationBar)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack {
-                    Text("Заказ оплачен")
-                        .font(Font.custom("SFProDisplay-Regular", size: 18))
-                }
-            }
-        }
+        .navBarCustomMod(with: ConstFinBooking.navTitle)
     }
 }
 
-#Preview {
-    FinishBookingView()
-}

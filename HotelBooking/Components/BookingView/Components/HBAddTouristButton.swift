@@ -12,27 +12,32 @@ struct HBAddTouristButton: View {
     @ObservedObject var viewModel: BookingViewModel
     
     var body: some View {
-        HStack{
-            Text("Добавить туриста")
-                .padding(.leading, 16)
+        HStack(spacing: 0){
+            Text(ConstBooking.titleAddTourist)
+                .font(
+                    Font.custom(ConstMain.fontDisplayReg, size: 22)
+                        .weight(.medium)
+                )
+                .foregroundColor(.black)
             Spacer()
             Button {
                 self.sumSections += 1
                 viewModel.addSection()
             } label: {
-                Image(systemName: "plus")
+                Image(systemName: ConstBooking.imageButtonPlus)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 14, height: 14)
                     .frame(width: 32, height: 32)
                     .foregroundColor(.white)
-                    .background(Color(red: 0.05, green: 0.45, blue: 1))
+                    .background(ConstMain.blueColor)
                     .cornerRadius(6)
-                    .padding(.trailing, 16)
             }
+            .disabled(sumSections == arrayNumberTourist.arrayTourist.count ? true : false)
         }
-        .frame(width: UIScreen.main.bounds.width, height: 58)
-        .background(Color.white)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 13)
+        .background(.white)
         .cornerRadius(12)
     }
 }

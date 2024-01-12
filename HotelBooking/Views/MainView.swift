@@ -18,49 +18,39 @@ struct MainView: View {
                     ScrollView{
                         VStack{
                             SliderFhotoFrame(name: viewModel.hotelInfo.name, mark: viewModel.hotelInfo.rating, rateName: viewModel.hotelInfo.ratingName, adress: viewModel.hotelInfo.adress, price: viewModel.hotelInfo.minimalPrice, pricefor: viewModel.hotelInfo.priceForIt, images: viewModel.hotelInfo.imageUrls)
-                                .frame(width: abs(proxy.size.width), height: abs(proxy.size.height * 0.6))
                                 .background(.white)
                                 .cornerRadius(12)
                             HotelInfoFrame(descript: viewModel.hotelInfo.aboutTheHotel.description, textInfo: viewModel.hotelInfo.aboutTheHotel.peculiarities)
-                                .frame(width: abs(proxy.size.width), height: abs(proxy.size.height * 0.64))
                                 .background(.white)
                                 .cornerRadius(12)
                             ZStack(alignment: .top){
                                 Button {
                                     nav.goToHotelRoomView()
                                 } label: {
-                                    HBButton(title: "К выбору номера", width:  abs(proxy.size.width - 32), height: 48)
+                                    HBButton(title: ConstMain.titleButton, width:  abs(proxy.size.width - 32), height: 48)
+                                        .padding(.top, 12)
                                 }
-                                .frame(width: abs(proxy.size.width), height: abs(proxy.size.height * 0.12), alignment: .top)
+                                .frame(width: abs(proxy.size.width), height: 88, alignment: .top)
                                 .background(.white)
                             }
                         }
-                        .background(Color.gray
-                            .opacity(0.1))
-                        .ignoresSafeArea(.all, edges: .bottom)
-                        .navigationBarTitleDisplayMode(.inline)
-                        .navigationDestination(for: String.self, destination: { view in
-                            if view == "HotelRoomView"{
-                                HotelRoomView(titleName: viewModel.hotelInfo.name)
-                            } else if view == "BookingView"{
-                                BookingView().toolbarRole(.editor)
-                            }else if view == "FinishBookingView"{
-                                FinishBookingView().toolbarRole(.editor)
-                            }
-                        })
-                        .toolbar {
-                            ToolbarItem(placement: .principal) {
-                                VStack {
-                                    Text("Отель")
-                                        .font(Font.custom("SFProDisplay-Regular", size: 18))
-                                }
-                            }
-                        }
-                        .toolbarBackground(.visible, for: .navigationBar)
-                        .toolbarBackground(.white, for: .navigationBar)
                     }
+                    .background(ConstMain.backColor)
+                    .ignoresSafeArea(.all, edges: .bottom)
+                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationDestination(for: String.self, destination: { view in
+                        if view == ConstMain.destHotelRoomView{
+                            HotelRoomView(titleName: viewModel.hotelInfo.name)
+                        } else if view == ConstMain.destBookingView{
+                            BookingView().toolbarRole(.editor)
+                        }else if view == ConstMain.destFinBookingView{
+                            FinishBookingView().toolbarRole(.editor)
+                        }
+                    })
+                    .navBarCustomMod()
                 }
             }
+            .accentColor(.black)
             .environmentObject(nav)
         }
     }

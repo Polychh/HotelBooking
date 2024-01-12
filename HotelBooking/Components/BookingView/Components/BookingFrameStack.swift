@@ -12,12 +12,13 @@ struct BookingFrameStack: View {
     var text2: String
     
     var body: some View {
-        HStack{
+        HStack(alignment: .top, spacing: 0){
             Text(text1)
-                .foregroundColor(Color(red: 0.51, green: 0.53, blue: 0.59))
+                .foregroundColor(ConstMain.grayFontColor)
             Spacer()
             Text(text2)
                 .foregroundColor(.black)
+                .lineLimit(2)
                 .frame(width: UIScreen.main.bounds.width * 0.55, alignment: .topLeading)
         }
     }
