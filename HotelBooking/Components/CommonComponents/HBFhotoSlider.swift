@@ -32,7 +32,7 @@ struct HBFhotoSlider: View {
     
     func setupAppearance() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .black
-        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+        UIPageControl.appearance().pageIndicatorTintColor = UIColor.white
     }
 }
 
