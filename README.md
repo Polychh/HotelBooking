@@ -6,7 +6,7 @@
 ---
 
 <div align="left">
-  <img src="https://github.dev/Polychh/HotelBooking/blob/main/HotelBookingWork.MP4" width="350" height="600"/>
+  <img src="https://github.com/Polychh/HotelBooking/blob/main/mainScreen.jpg" width="350" height="600"/>
 </div>
 
 ---
