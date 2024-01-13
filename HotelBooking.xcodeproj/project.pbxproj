@@ -29,6 +29,7 @@
 		368F68A22B518FC7004A6AE2 /* ConstBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A12B518FC7004A6AE2 /* ConstBooking.swift */; };
 		368F68A42B519010004A6AE2 /* ConstFinBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A32B519010004A6AE2 /* ConstFinBooking.swift */; };
 		368F68A62B526FA8004A6AE2 /* ConstHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */; };
+		368F68AC2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368F68AB2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf */; };
 		36D194992B3B18FA006C15D7 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D194982B3B18FA006C15D7 /* MainModel.swift */; };
 		36D1949C2B3B1946006C15D7 /* HBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949B2B3B1946006C15D7 /* HBErrors.swift */; };
 		36D1949F2B3B1981006C15D7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949E2B3B1981006C15D7 /* NetworkService.swift */; };
@@ -44,7 +45,6 @@
 		36E07B742B3EF578002EE0D0 /* InfoFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E07B732B3EF578002EE0D0 /* InfoFrame.swift */; };
 		36E07B762B3EF907002EE0D0 /* CostFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E07B752B3EF907002EE0D0 /* CostFrame.swift */; };
 		36E07B822B3F00BE002EE0D0 /* CostFrameStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E07B812B3F00BE002EE0D0 /* CostFrameStack.swift */; };
-		36E07B8A2B3F4F8E002EE0D0 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36E07B892B3F4F8E002EE0D0 /* SF-Pro-Display-Semibold.otf */; };
 		36E07B8C2B3F4F9A002EE0D0 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 36E07B8B2B3F4F9A002EE0D0 /* SF-Pro-Display-Regular.otf */; };
 		36E07B8E2B3F6E80002EE0D0 /* DataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E07B8D2B3F6E80002EE0D0 /* DataRequest.swift */; };
 		36E07B902B3F6EA8002EE0D0 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E07B8F2B3F6EA8002EE0D0 /* EndPoints.swift */; };
@@ -90,6 +90,7 @@
 		368F68A12B518FC7004A6AE2 /* ConstBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstBooking.swift; sourceTree = "<group>"; };
 		368F68A32B519010004A6AE2 /* ConstFinBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstFinBooking.swift; sourceTree = "<group>"; };
 		368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstHelpers.swift; sourceTree = "<group>"; };
+		368F68AB2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = SOURCE_ROOT; };
 		36D194982B3B18FA006C15D7 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		36D1949B2B3B1946006C15D7 /* HBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBErrors.swift; sourceTree = "<group>"; };
 		36D1949E2B3B1981006C15D7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -105,7 +106,6 @@
 		36E07B732B3EF578002EE0D0 /* InfoFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFrame.swift; sourceTree = "<group>"; };
 		36E07B752B3EF907002EE0D0 /* CostFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostFrame.swift; sourceTree = "<group>"; };
 		36E07B812B3F00BE002EE0D0 /* CostFrameStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostFrameStack.swift; sourceTree = "<group>"; };
-		36E07B892B3F4F8E002EE0D0 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "../../../../Downloads/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		36E07B8B2B3F4F9A002EE0D0 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		36E07B8D2B3F6E80002EE0D0 /* DataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRequest.swift; sourceTree = "<group>"; };
 		36E07B8F2B3F6EA8002EE0D0 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				36E07B8B2B3F4F9A002EE0D0 /* SF-Pro-Display-Regular.otf */,
-				36E07B892B3F4F8E002EE0D0 /* SF-Pro-Display-Semibold.otf */,
+				368F68AB2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -427,7 +427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36E07B8A2B3F4F8E002EE0D0 /* SF-Pro-Display-Semibold.otf in Resources */,
+				368F68AC2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf in Resources */,
 				3626EDE32B38559800F4FC12 /* Preview Assets.xcassets in Resources */,
 				36E07B8C2B3F4F9A002EE0D0 /* SF-Pro-Display-Regular.otf in Resources */,
 				3626EDE02B38559800F4FC12 /* Assets.xcassets in Resources */,
