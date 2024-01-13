@@ -14,7 +14,7 @@ extension String{
         var index = cleanNumber.startIndex
         if let mask = mask{
             for ch in mask where index < cleanNumber.endIndex{
-                if ch == "X"{
+                if ch == ConstHelpers.maskSymbol{
                     result.append(cleanNumber[index])
                     index = cleanNumber.index(after: index)
                 } else {

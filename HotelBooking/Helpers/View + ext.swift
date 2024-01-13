@@ -11,22 +11,22 @@ extension View{
     // MARK: - Format evry 3 digit
     func formated(valueInt: Int) -> String{
         var priceString = String(valueInt)
-        priceString.insert(separator: " ", every: 3)
+        priceString.insert(separator: ConstHelpers.space, every: ConstHelpers.everyNumber)
         return priceString
     }
     // MARK: - Format one space
     func formatedOneSpace(valueInt: Int) -> String{
         var priceString = String(valueInt)
-        let indexToInsert = priceString.index(priceString.startIndex, offsetBy: 1)
+        let indexToInsert = priceString.index(priceString.startIndex, offsetBy: ConstHelpers.oneSpace)
         priceString.insert(" ", at: indexToInsert)
         return priceString
     }
     // MARK: - Conver index tourst to word tourist
     func convertIndexTourist(number: Int) -> String {
-        if number <= 10 {
+        if number <= ConstHelpers.maxTourist {
             return arrayNumberTourist[number]
         } else {
-            return "Число превышает 10"
+            return ConstHelpers.errorMaxTourist
         }
     }
 }

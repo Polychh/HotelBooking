@@ -11,7 +11,7 @@ import Combine
 extension Collection where Element: Publisher {
     func combineLatest() -> AnyPublisher<[Element.Output], Element.Failure> {
         var wrapped = map { $0.map { [$0] }.eraseToAnyPublisher() }
-        while wrapped.count > 1 {
+        while wrapped.count > ConstHelpers.combineNumber {
             wrapped = makeCombinedChunks(input: wrapped)
         }
         return wrapped.first?.eraseToAnyPublisher() ?? Empty().eraseToAnyPublisher()

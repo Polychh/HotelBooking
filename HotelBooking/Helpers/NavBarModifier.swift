@@ -26,7 +26,7 @@ struct NavBarModifier: ViewModifier{
 }
 
 extension View {
-    func navBarCustomMod(with text: String = "Отель") -> some View {
+    func navBarCustomMod(with text: String = ConstHelpers.defaultNavTittle) -> some View {
         self.modifier(NavBarModifier(textParam: text))
     }
 }

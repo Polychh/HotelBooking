@@ -16,11 +16,11 @@ enum HBErrors: Error, LocalizedError{
     var errorDescription: String?{ 
         switch self{
         case .invalidURL:
-            return "Wrong URL"
+            return ConstHelpers.netErrorUrl
         case .invalidResponce:
-            return "Wrong Response"
+            return ConstHelpers.netErrorResponse
         case .invalidData:
-            return "Can not decode Data"
+            return ConstHelpers.netErrorData
         case .unknow(let error):
             return error.localizedDescription
         }

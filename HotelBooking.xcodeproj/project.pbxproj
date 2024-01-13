@@ -28,6 +28,7 @@
 		368F68A02B518F93004A6AE2 /* ConstHotelRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F689F2B518F93004A6AE2 /* ConstHotelRoom.swift */; };
 		368F68A22B518FC7004A6AE2 /* ConstBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A12B518FC7004A6AE2 /* ConstBooking.swift */; };
 		368F68A42B519010004A6AE2 /* ConstFinBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A32B519010004A6AE2 /* ConstFinBooking.swift */; };
+		368F68A62B526FA8004A6AE2 /* ConstHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */; };
 		36D194992B3B18FA006C15D7 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D194982B3B18FA006C15D7 /* MainModel.swift */; };
 		36D1949C2B3B1946006C15D7 /* HBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949B2B3B1946006C15D7 /* HBErrors.swift */; };
 		36D1949F2B3B1981006C15D7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949E2B3B1981006C15D7 /* NetworkService.swift */; };
@@ -88,6 +89,7 @@
 		368F689F2B518F93004A6AE2 /* ConstHotelRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstHotelRoom.swift; sourceTree = "<group>"; };
 		368F68A12B518FC7004A6AE2 /* ConstBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstBooking.swift; sourceTree = "<group>"; };
 		368F68A32B519010004A6AE2 /* ConstFinBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstFinBooking.swift; sourceTree = "<group>"; };
+		368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstHelpers.swift; sourceTree = "<group>"; };
 		36D194982B3B18FA006C15D7 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		36D1949B2B3B1946006C15D7 /* HBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBErrors.swift; sourceTree = "<group>"; };
 		36D1949E2B3B1981006C15D7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				368F689F2B518F93004A6AE2 /* ConstHotelRoom.swift */,
 				368F68A12B518FC7004A6AE2 /* ConstBooking.swift */,
 				368F68A32B519010004A6AE2 /* ConstFinBooking.swift */,
+				368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */,
 			);
 			path = Constant;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				36E07B822B3F00BE002EE0D0 /* CostFrameStack.swift in Sources */,
 				3626EE012B38C32800F4FC12 /* MainView.swift in Sources */,
 				36E07B662B3EC835002EE0D0 /* Collapsible.swift in Sources */,
+				368F68A62B526FA8004A6AE2 /* ConstHelpers.swift in Sources */,
 				36E07B952B3F72F2002EE0D0 /* MainInfoRequest.swift in Sources */,
 				36E07BA42B415CD4002EE0D0 /* NavigationStateManager.swift in Sources */,
 				36D1949C2B3B1946006C15D7 /* HBErrors.swift in Sources */,
