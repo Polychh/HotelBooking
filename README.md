@@ -9,6 +9,7 @@
   <img src="https://github.com/Polychh/HotelBooking/blob/main/mainScreen.jpg" width="350" height="600"/>
 </div>
 
+##### Видео с работой HotelBooking в файлах проекта.
 ---
 ### Главный экран:
 При запуске приложения начальным экраном является экран «Отель». Содержит:
