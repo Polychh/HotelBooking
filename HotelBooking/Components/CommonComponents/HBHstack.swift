@@ -23,13 +23,12 @@ struct HBHstack: View {
                 .padding(.vertical, 5)
                 .background(ConstMain.lightGrayColor)
                 .cornerRadius(5)
-            Spacer()
         }
         .font(
             Font.custom(ConstMain.fontDisplayReg, size: 16)
                 .weight(.medium))
         .multilineTextAlignment(.leading)
-        .lineLimit(2)
+        .lineLimit(1)
         .foregroundColor(ConstMain.grayFontColor)
     }
 }

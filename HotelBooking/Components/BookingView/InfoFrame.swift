@@ -9,6 +9,7 @@ import SwiftUI
 
 struct InfoFrame: View {
     @ObservedObject var viewModel: BookingViewModel
+    @FocusState private var isFocusedEmail: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
@@ -22,7 +23,9 @@ struct InfoFrame: View {
             HBTextFieldInfo(text: $viewModel.phoneNumber, title: ConstBooking.numberTextField, prompt: viewModel.numberPrompt)
                 .keyboardType(.numberPad)
                 .onTapGesture {
-                    viewModel.phoneNumber = ConstBooking.beginNumberFhone
+                    if viewModel.phoneNumber.isEmpty{
+                        viewModel.phoneNumber = ConstBooking.beginNumberFhone
+                    }
                 }
                 .onChange(of: viewModel.phoneNumber, { oldValue, newValue in
                     if newValue == "" {
@@ -36,6 +39,13 @@ struct InfoFrame: View {
                     }
                 })
             HBTextFieldInfo(text: $viewModel.email, title: ConstBooking.emailTextField, prompt: viewModel.emailPrompt)
+                .focused($isFocusedEmail)
+                .onChange(of: isFocusedEmail) { oldValue, newValue in
+                    viewModel.emailFieldIsFocused = newValue
+                }
+                .onAppear {
+                           self.isFocusedEmail =  viewModel.emailFieldIsFocused    // << read !!
+                        }
             Text(ConstBooking.info)
                 .font(Font.custom(ConstMain.fontDisplayReg, size: 14))
                 .foregroundColor(ConstMain.grayFontColor)

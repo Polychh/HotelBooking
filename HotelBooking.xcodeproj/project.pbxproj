@@ -30,6 +30,7 @@
 		368F68A42B519010004A6AE2 /* ConstFinBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A32B519010004A6AE2 /* ConstFinBooking.swift */; };
 		368F68A62B526FA8004A6AE2 /* ConstHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */; };
 		368F68AC2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 368F68AB2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf */; };
+		368F68B22B55940A004A6AE2 /* CustomTabIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368F68B12B55940A004A6AE2 /* CustomTabIndicator.swift */; };
 		36D194992B3B18FA006C15D7 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D194982B3B18FA006C15D7 /* MainModel.swift */; };
 		36D1949C2B3B1946006C15D7 /* HBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949B2B3B1946006C15D7 /* HBErrors.swift */; };
 		36D1949F2B3B1981006C15D7 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D1949E2B3B1981006C15D7 /* NetworkService.swift */; };
@@ -91,6 +92,7 @@
 		368F68A32B519010004A6AE2 /* ConstFinBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstFinBooking.swift; sourceTree = "<group>"; };
 		368F68A52B526FA7004A6AE2 /* ConstHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstHelpers.swift; sourceTree = "<group>"; };
 		368F68AB2B5288A9004A6AE2 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Semibold.otf"; path = "Fonts/SF-Pro-Display-Semibold.otf"; sourceTree = SOURCE_ROOT; };
+		368F68B12B55940A004A6AE2 /* CustomTabIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabIndicator.swift; sourceTree = "<group>"; };
 		36D194982B3B18FA006C15D7 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		36D1949B2B3B1946006C15D7 /* HBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBErrors.swift; sourceTree = "<group>"; };
 		36D1949E2B3B1981006C15D7 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 			children = (
 				365A6E592B39830700CD73C5 /* HBButton.swift */,
 				3626EDEB2B3857C400F4FC12 /* HBFhotoSlider.swift */,
+				368F68B12B55940A004A6AE2 /* CustomTabIndicator.swift */,
 				3626EDF82B38B02900F4FC12 /* HBHstack.swift */,
 			);
 			path = CommonComponents;
@@ -450,6 +453,7 @@
 				36E07B662B3EC835002EE0D0 /* Collapsible.swift in Sources */,
 				368F68A62B526FA8004A6AE2 /* ConstHelpers.swift in Sources */,
 				36E07B952B3F72F2002EE0D0 /* MainInfoRequest.swift in Sources */,
+				368F68B22B55940A004A6AE2 /* CustomTabIndicator.swift in Sources */,
 				36E07BA42B415CD4002EE0D0 /* NavigationStateManager.swift in Sources */,
 				36D1949C2B3B1946006C15D7 /* HBErrors.swift in Sources */,
 				36E07B902B3F6EA8002EE0D0 /* EndPoints.swift in Sources */,
@@ -626,7 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HotelBooking/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y8A5AV6CJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HotelBooking/Info.plist;
@@ -656,7 +660,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HotelBooking/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y8A5AV6CJ2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HotelBooking/Info.plist;

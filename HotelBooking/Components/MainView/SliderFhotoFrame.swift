@@ -21,7 +21,7 @@ struct SliderFhotoFrame: View {
             HBFhotoSlider(images: images)
                 .cornerRadius(15)
                 .padding(.bottom, 8)
-            HStack(alignment: .center, spacing: 5) {
+            HStack(alignment: .center, spacing: 3) {
                 Image(systemName: ConstMain.imageStar)
                     .resizable()
                     .scaledToFill()

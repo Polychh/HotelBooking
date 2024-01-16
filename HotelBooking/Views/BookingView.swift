@@ -60,6 +60,12 @@ struct BookingView: View {
                             if turistInfo == true && viewModel.canSubmitInfo == true {
                                 nav.goFinishBookingView()
                             } else{
+                                viewModel.indexArray.forEach { index in
+                                    viewModel.sectionArray[index].buttonTapped = true
+                                    viewModel.sectionArray[index].triggerTextFieldValidation()
+                                }
+                                viewModel.buttonTapped = true
+                                viewModel.triggerTFInfoValidation()
                                 showingAlert = true
                             }
                         } label: {

@@ -19,8 +19,10 @@ final class BookingViewModel: ObservableObject{
     @Published var sectionArray: [SectionViewModel] = [SectionViewModel()]
     @Published var indexArray: [Int] = []
     
+    @Published var buttonTapped: Bool = false
     @Published var email = ""
     @Published var phoneNumber = ""
+    @Published var emailFieldIsFocused: Bool = false
     private let emailPredicate = NSPredicate(format: "SELF MATCHES %@", Regex.email.rawValue)
     private let numberPredicate = NSPredicate(format: "SELF MATCHES %@", Regex.number.rawValue)
     private var cancalableInfo: Set<AnyCancellable> = []
@@ -54,6 +56,10 @@ final class BookingViewModel: ObservableObject{
         section.validateCollapse()
         sectionArray.append(section)
     }
+    func triggerTFInfoValidation(){
+        phoneNumber += ""
+        email += ""
+    }
     
     private func loadData(){
         Task{
@@ -62,10 +68,12 @@ final class BookingViewModel: ObservableObject{
     }
     
     private func isValidProperty(property: String, valid: Bool, prompt: String) -> String?{
-        if property.isEmpty || valid == true || property == ConstBooking.beginNumberFhone{
+        if valid == true {
             return nil
-        } else{
+        } else if (self.buttonTapped == true && valid == false) || (valid == false && !property.isEmpty){
             return prompt
+        } else {
+            return nil
         }
     }
     
@@ -73,7 +81,12 @@ final class BookingViewModel: ObservableObject{
         $email
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map {email in
-                return self.emailPredicate.evaluate(with: email)
+                if self.emailFieldIsFocused == false{
+                    return self.emailPredicate.evaluate(with: email)
+                } else {
+                    return true
+                }
+                
             }
             .assign(to: \.isValidEmail, on: self)
             .store(in: &cancalableInfo)
@@ -81,7 +94,12 @@ final class BookingViewModel: ObservableObject{
         $phoneNumber
             .debounce(for: 0.5, scheduler: RunLoop.main)
             .map {number in
-                return  self.numberPredicate.evaluate(with: number)
+                if self.buttonTapped == true &&  self.numberPredicate.evaluate(with: number) == false{
+                   return  false
+                } else {
+                   return self.numberPredicate.evaluate(with: number)
+                }
+               
             }
             .assign(to: \.isValidNumber, on: self)
             .store(in: &cancalableInfo)
@@ -106,3 +124,4 @@ final class BookingViewModel: ObservableObject{
         }
     }
 }
+

@@ -13,7 +13,7 @@ struct ConstBooking{
     static let toutist = " турист"
     static let pay = "Оплатить "
     static let alerTitle = "Ошибка"
-    static let alertMessage = "Все поля обязательны. Пожалуйста, заполните пустые поля."
+    static let alertMessage = "Все поля обязательны. Пожалуйста, заполните все поля"
     static let alertButTitle = "Хорошо"
     static let navTitle = "Бронирование"
     // MARK: - BookingView Components

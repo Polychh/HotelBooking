@@ -21,6 +21,7 @@ final class SectionViewModel: ObservableObject{
     
     private var cancalableCollapse: Set<AnyCancellable> = []
     
+    @Published var buttonTapped: Bool = false
     @Published private var isValidName  = false
     @Published private var isValidsurName = false
     @Published private var isValidDateBirth = false
@@ -30,77 +31,105 @@ final class SectionViewModel: ObservableObject{
     @Published var canSubmitCollapse: Bool = false
     
     var nameColor: Bool?{
-        isValidProperty(property: name, valid: isValidName)
+        isValidProperty(valid: isValidName)
     }
     var surnameColor: Bool?{
-        isValidProperty(property: surName, valid: isValidsurName)
+        isValidProperty(valid: isValidsurName)
     }
     var dateBirthColor: Bool?{
-        isValidProperty(property: dateBirth, valid: isValidDateBirth)
+        isValidProperty(valid: isValidDateBirth)
     }
     var countryColor: Bool?{
-        isValidProperty(property: country, valid: isValidCountry)
+        isValidProperty(valid: isValidCountry)
     }
     var passportColor: Bool?{
-        isValidProperty(property: pasport, valid: isValidPassport)
+        isValidProperty(valid: isValidPassport)
     }
     
     var datePassportColor: Bool?{
-        isValidProperty(property: datePasport, valid: isValidDatePassport)
+        isValidProperty(valid: isValidDatePassport)
     }
     
-    private func isValidProperty(property: String, valid: Bool) -> Bool?{
-        if property.isEmpty || valid == true {
+    private func isValidProperty(valid: Bool) -> Bool?{
+        if valid == true {
             return false
-        } else {
+        } else if self.buttonTapped == true && valid == false {
             return true
+        } else {
+            return false
         }
+    }
+    
+    private func validStatment(input: Published<String>.Publisher.Output) -> Bool{
+        if self.buttonTapped == true && input.count < 2{
+            return false
+        } else if input.count >= 2{
+            return true
+        } else{
+            return false
+        }
+    }
+    
+    func triggerTextFieldValidation(){
+        name += ""
+        surName += ""
+        dateBirth += ""
+        country += ""
+        pasport += ""
+        datePasport += ""
     }
     
     func validateCollapse(){
         $name
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else {return true}
+                return validStatment(input: input)
             }
             .assign(to: \.isValidName, on: self)
             .store(in: &cancalableCollapse)
+        
         $surName
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return  input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else { return true }
+                return validStatment(input: input)
             }
             .assign(to: \.isValidsurName, on: self)
             .store(in: &cancalableCollapse)
         
         $dateBirth
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return  input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else { return true }
+                return validStatment(input: input)
             }
             .assign(to: \.isValidDateBirth, on: self)
             .store(in: &cancalableCollapse)
         
         $country
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return  input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else { return true }
+                return validStatment(input: input)
             }
             .assign(to: \.isValidCountry, on: self)
             .store(in: &cancalableCollapse)
         
         $pasport
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return  input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else { return true }
+                return validStatment(input: input)
             }
             .assign(to: \.isValidPassport, on: self)
             .store(in: &cancalableCollapse)
         
         $datePasport
             .debounce(for: 0.5, scheduler: RunLoop.main)
-            .map { input in
-                return  input.count >= 2
+            .map {[weak self] input in
+                guard let self = self else { return true }
+                return validStatment(input: input)
             }
             .assign(to: \.isValidDatePassport, on: self)
             .store(in: &cancalableCollapse)

@@ -13,7 +13,7 @@ struct HotelFrame: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
-            HStack(alignment: .center, spacing: 5) {
+            HStack(alignment: .center, spacing: 3) {
                 Image(systemName: ConstMain.imageStar)
                     .resizable()
                     .scaledToFill()
